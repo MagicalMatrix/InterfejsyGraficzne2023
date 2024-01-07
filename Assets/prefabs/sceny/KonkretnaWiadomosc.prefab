@@ -212,8 +212,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 644, y: 0}
-  m_SizeDelta: {x: 1268, y: 0}
+  m_AnchoredPosition: {x: 656.5, y: 0}
+  m_SizeDelta: {x: 1293, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &473676170382060048
 CanvasRenderer:
@@ -1328,8 +1328,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -7.5}
-  m_SizeDelta: {x: 0, y: 15}
+  m_AnchoredPosition: {x: 0, y: -3.694}
+  m_SizeDelta: {x: 0, y: 7.388}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6517523749654070265
 CanvasRenderer:
@@ -1570,7 +1570,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3725581185051738975}
-  - component: {fileID: 6629911946255186769}
   m_Layer: 5
   m_Name: OcenaSzczegoly
   m_TagString: Untagged
@@ -1596,22 +1595,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: -556}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6629911946255186769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3285322530020510673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 0
-  m_VerticalFit: 2
 --- !u!1 &3326407062382454154
 GameObject:
   m_ObjectHideFlags: 0
@@ -2503,6 +2488,7 @@ GameObject:
   - component: {fileID: 8261295029971510419}
   - component: {fileID: 3532158332618508198}
   - component: {fileID: 5795428555595062130}
+  - component: {fileID: 877315763555395122}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -2532,7 +2518,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 47.5, y: 25}
-  m_SizeDelta: {x: -165, y: -50}
+  m_SizeDelta: {x: -165, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8261295029971510419
 MonoBehaviour:
@@ -2550,7 +2536,7 @@ MonoBehaviour:
     m_Left: 10
     m_Right: 10
     m_Top: 10
-    m_Bottom: 0
+    m_Bottom: 25
   m_ChildAlignment: 1
   m_Spacing: 7.59
   m_ChildForceExpandWidth: 1
@@ -2595,6 +2581,20 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &877315763555395122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6889400338560803450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1 &7458934664064486214
 GameObject:
   m_ObjectHideFlags: 0
