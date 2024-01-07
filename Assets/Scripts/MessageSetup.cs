@@ -7,7 +7,7 @@ public class MessageSetup : MonoBehaviour
 {
     public TMP_Text receiver;
     public TMP_Text title;
-    public TMP_Text content;
+    public TMP_InputField content;
     
     // Start is called before the first frame update
     void Start()
