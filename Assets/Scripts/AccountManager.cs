@@ -6,6 +6,7 @@ public class AccountManager : MonoBehaviour
 {
     public Account[] accounts;
     public Account currentAccount;
+    public GameObject mainContent;
 
 
 	private void Start()
@@ -25,5 +26,16 @@ public class AccountManager : MonoBehaviour
 		}
 
 		return res.ToArray();
+	}
+
+
+	public void SwitchAccount(Account acc)
+	{
+		currentAccount = acc;
+	}
+
+	public void Logout()
+	{
+		mainContent.SetActive(false);
 	}
 }
