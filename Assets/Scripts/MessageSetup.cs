@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -5,9 +6,12 @@ using UnityEngine;
 
 public class MessageSetup : MonoBehaviour
 {
+    public TMP_Text date;
+    public TMP_Text sender;
     public TMP_Text receiver;
     public TMP_Text title;
     public TMP_InputField content;
+    public MailData data;
     
     // Start is called before the first frame update
     void Start()
@@ -20,11 +24,14 @@ public class MessageSetup : MonoBehaviour
     {
         
     }
-
-    public void SetMessage(string receiverText, string titleText, string contentText)
+    
+    public void SetMessage(MailData newData)
     {
-        receiver.text = receiverText;
-        title.text = titleText;
-        content.text = contentText;
+        date.text = DateTime.Now.ToString("dd/MM/yyyy hh:mm");
+        receiver.text = newData.receiver;
+        sender.text = newData.sender;
+        title.text = newData.title;
+        content.text = newData.content;
+        data.SetData(newData);
     }
 }

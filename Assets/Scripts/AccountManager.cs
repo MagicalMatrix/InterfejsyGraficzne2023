@@ -8,14 +8,15 @@ public class AccountManager : MonoBehaviour
     public Account currentAccount;
     
     public GameObject mainContent;
-    public GameObject teacherSentMessages;
-    public GameObject teacherReceivedMessages;
-    public GameObject teacherMessagesOptions;
-    public GameObject studentMessagesOptions;
+    public GameObject teacherReceiverDropdown;
+    public GameObject studentReceiverDropdown;
 
-	private void Start()
+    private MailManager _mailManager;
+    
+    private void Start()
 	{
 		accounts = gameObject.GetComponentsInChildren<Account>();
+		_mailManager = FindAnyObjectByType<MailManager>();
 	}
 
 	public Account[] GetAccountsOfSubtype(string subtype)
@@ -35,21 +36,22 @@ public class AccountManager : MonoBehaviour
 
 	public void SwitchAccount(Account acc)
 	{
+		// AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+		// ...
+		// ┬─┬ノ( º _ ºノ)
 		currentAccount = acc;
 		if (currentAccount.type == Enums.AccountType.Nauczyciel)
 		{
-			teacherReceivedMessages.SetActive(true);	
-			teacherSentMessages.SetActive(false);
-			teacherMessagesOptions.SetActive(true);
-			studentMessagesOptions.SetActive(false);
+			teacherReceiverDropdown.SetActive(true);
+			studentReceiverDropdown.SetActive(false);
 		}
 		else
 		{
-			teacherReceivedMessages.SetActive(false);	
-			teacherSentMessages.SetActive(true);
-			studentMessagesOptions.SetActive(true);
-			teacherMessagesOptions.SetActive(false);
+			teacherReceiverDropdown.SetActive(false);
+			studentReceiverDropdown.SetActive(true);
 		}
+		
+		_mailManager.DisplayMails(false);
 	}
 
 	public void Logout()

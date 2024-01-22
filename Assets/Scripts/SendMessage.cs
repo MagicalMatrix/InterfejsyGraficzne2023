@@ -7,21 +7,21 @@ using UnityEngine.UI;
 
 public class SendMessage : MonoBehaviour
 {
-    public GameObject receivedMessagesPageStudent;
-    public GameObject receivedMessagesPageTeacher;
     public GameObject messagesRoot;
-    public GameObject message;
 
     public AccountManager accountManager;
+    public MailManager mailManager;
     public SelectiveActivation selectiveActivation;
 
-    public TMP_InputField receiver;
+    public TMP_Dropdown receiverStudent;
+    public TMP_Dropdown receiverTeacher;
     public TMP_InputField title;
     public TMP_InputField content;
 
     // Start is called before the first frame update
     void Start()
     {
+        mailManager = FindAnyObjectByType<MailManager>();
     }
 
     // Update is called once per frame
@@ -29,25 +29,22 @@ public class SendMessage : MonoBehaviour
     {
     }
 
+    // God save us. It's so hacky
     public void Send()
     {
-        // TODO: Allow sending messages only to existing users (maybe use select box)
+        TMP_Dropdown receiver = receiverStudent;
+        if (accountManager.currentAccount.type == Enums.AccountType.Nauczyciel)
+        {
+            receiver = receiverTeacher;
+        }
         
-        if (accountManager.currentAccount.type == Enums.AccountType.Uczen)
+        if (receiver.value == 0)
         {
-            GameObject newMessage = Instantiate(message, messagesRoot.transform);
-            newMessage.GetComponent<MessageSetup>().SetMessage(receiver.text, title.text, content.text);
-            selectiveActivation.SelectActive(receivedMessagesPageStudent);
+            mailManager.SendMail(new MailData(receiver.options[0].text, accountManager.currentAccount.name, title.text, content.text));
         }
-        else
-        {
-            // God save us. It's so hacky
-            GameObject newMessage = Instantiate(message, receivedMessagesPageStudent.transform);
-            newMessage.GetComponent<MessageSetup>().SetMessage(receiver.text, title.text, content.text);
-            selectiveActivation.SelectActive(receivedMessagesPageTeacher);
-        }
-
-        receiver.text = "";
+        selectiveActivation.SelectActive(messagesRoot);
+        
+        receiver.value = 0;
         title.text = "";
         content.text = "";
     }

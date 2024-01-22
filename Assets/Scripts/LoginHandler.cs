@@ -32,13 +32,13 @@ public class LoginHandler : MonoBehaviour
         passwordInput.text = "";
         errorMessage.text = "";
         
-        if (username.ToLower() == "jankowal" && password == "123")
+        if (username.ToLower() == studentAccount.username && password == "123")
         {
             manager.SwitchAccount(studentAccount);
             mainContent.SetActive(true);
             usernameInput.text = "";
         }
-        else if (username.ToLower() == "william" && password == "123")
+        else if (username.ToLower() == teacherAccount.username && password == "123")
         {
             manager.SwitchAccount(teacherAccount);
             mainContent.SetActive(true);
