@@ -76,6 +76,14 @@ public class GradesManager : MonoBehaviour
         gradeInstances.description.Add(grade.description.text);
     }
 
+    
+    public void SaveGrade(int id, GradeSender grade)
+    {
+        gradeInstances.topic[id] = grade.topic.text;
+        gradeInstances.value[id] = grade.value.text;
+        gradeInstances.description[id] = grade.description.text;
+    }
+
     public void UpdateViews()
 	{
         //delete old views
