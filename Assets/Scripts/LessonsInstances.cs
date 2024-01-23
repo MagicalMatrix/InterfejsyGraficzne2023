@@ -8,8 +8,7 @@ public class LessonsInstances : MonoBehaviour
     //by the week date and id
     //id goes 1-8 each day, whenever actual lesson was
     //there or not
-    public List<int> week;
     public List<int> lessonId;
-    public List<int> accountId;
-    public List<Enums.LessonStatus> status;
+    public List<string> accountName;
+    public List<int> status;
 }

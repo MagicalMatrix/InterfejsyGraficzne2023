@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class LessonView : MonoBehaviour
 {
+    public int id;
+    public Button presenseButton;
     public TMP_Text timeStart;
     public TMP_Text timeEnd;
     public TMP_Text lessonName;

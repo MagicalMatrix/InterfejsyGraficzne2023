@@ -102,7 +102,7 @@ public class GradesManager : MonoBehaviour
                 bool existingLesson = false;
                 for (int j = 0; j < gradeViewers.Count; j++)
 				{
-                    if (gradeViewers[j].lesson.text == gradeInstances.lesson[i])
+                    if (gradeViewers[j].lesson.text == gradeInstances.lesson[i] && gradeInstances.target[i] == accountManager.currentAccount.name)
 					{
                         existingLesson = true;
                         //add grade to lesson
@@ -112,7 +112,7 @@ public class GradesManager : MonoBehaviour
                         newGrade.gameObject.SetActive(true);
 					}
 				}
-                if (!existingLesson)
+                if (!existingLesson && gradeInstances.target[i] == accountManager.currentAccount.name)
 				{
                     Debug.Log("added lesson type");
                     //form new lesson
@@ -139,7 +139,7 @@ public class GradesManager : MonoBehaviour
                 bool existingLesson = false;
                 for (int j = 0; j < gradeViewers.Count; j++)
                 {
-                    if (gradeViewers[j].lesson.text == gradeInstances.lesson[i])
+                    if (gradeViewers[j].lesson.text == gradeInstances.lesson[i] && gradeInstances.target[i] == accountManager.currentAccount.name)
                     {
                         existingLesson = true;
                         //add grade to lesson
@@ -149,7 +149,7 @@ public class GradesManager : MonoBehaviour
                         newGrade.gameObject.SetActive(true);
                     }
                 }
-                if (!existingLesson)
+                if (!existingLesson && gradeInstances.target[i] == accountManager.currentAccount.name)
                 {
                     Debug.Log("added lesson type");
                     //form new lesson
