@@ -18,6 +18,21 @@ public class SelectiveActivation : MonoBehaviour
         
     }
 
+    public void SelectActive(int index)
+	{
+        for (int i = 0; i < Content.Count; i++)
+        {
+            if (i == index)
+			{
+                Content[i].SetActive(true);
+            }
+            else
+			{
+                Content[i].SetActive(false);
+            }
+        }
+    }
+
     public void SelectActive(GameObject toActive)
 	{
         for (int i = 0; i < Content.Count; i++)

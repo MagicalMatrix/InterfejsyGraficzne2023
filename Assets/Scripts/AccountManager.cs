@@ -33,6 +33,17 @@ public class AccountManager : MonoBehaviour
 		return res.ToArray();
 	}
 
+	public Account GetAccountOfName(string name)
+	{
+		for (int i = 0; i < accounts.Length; i++)
+		{
+			if (accounts[i].name == name)
+			{
+				return accounts[i];
+			}
+		}
+		return null;
+	}
 
 	public void SwitchAccount(Account acc)
 	{

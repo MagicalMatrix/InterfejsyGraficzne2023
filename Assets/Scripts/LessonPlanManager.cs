@@ -20,11 +20,14 @@ public class LessonPlanManager : MonoBehaviour
         lessonViews = gameObject.GetComponentsInChildren<LessonView>();
         SetTimes();
         accountManager = GameObject.FindAnyObjectByType<AccountManager>();
+    }
 
+	private void OnEnable()
+	{
         UpdateViews();
     }
 
-    void SetTimes()
+	void SetTimes()
 	{
         for (int i = 0; i < lessonViews.Length; i++)
 		{
