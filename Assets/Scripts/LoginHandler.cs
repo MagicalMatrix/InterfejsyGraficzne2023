@@ -8,7 +8,7 @@ public class LoginHandler : MonoBehaviour
     public Account teacherAccount;
     public Account studentAccount;
 
-    public GameObject mainContent;
+    public GameObject loginPage;
     public AccountManager manager;
 
     public TMP_InputField usernameInput;
@@ -35,13 +35,13 @@ public class LoginHandler : MonoBehaviour
         if (username.ToLower() == studentAccount.username && password == "123")
         {
             manager.SwitchAccount(studentAccount);
-            mainContent.SetActive(true);
+            loginPage.SetActive(false);
             usernameInput.text = "";
         }
         else if (username.ToLower() == teacherAccount.username && password == "123")
         {
             manager.SwitchAccount(teacherAccount);
-            mainContent.SetActive(true);
+            loginPage.SetActive(false);
             usernameInput.text = "";
         }
         else

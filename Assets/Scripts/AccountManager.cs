@@ -7,7 +7,7 @@ public class AccountManager : MonoBehaviour
     public Account[] accounts;
     public Account currentAccount;
     
-    public GameObject mainContent;
+    public GameObject loginPage;
     public GameObject teacherReceiverDropdown;
     public GameObject studentReceiverDropdown;
 
@@ -67,6 +67,6 @@ public class AccountManager : MonoBehaviour
 
 	public void Logout()
 	{
-		mainContent.SetActive(false);
+		loginPage.SetActive(true);
 	}
 }
